@@ -62,25 +62,29 @@ export default function Home() {
 
   return (
     <main className="flex flex-col justify-start items-center w-full h-[80vh]">
-      <div className=" w-full flex flex-col justify-start items-center h-[80%] gap-10 mt-12 py-10">
+      <Head>
+        <title>Regroot - Search</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <div className="w-full flex flex-col justify-start items-center h-[80%] gap-10 mt-12 py-10">
         <div className="flex flex-col items-center gap-4">
           <Fade>
             <Slide direction="down">
-              <h1 className="text-6xl font-semibold text-white">
-                Your chance to{" "}
+              <p className="px-4 text-4xl font-semibold text-center text-white md:text-6xl">
+                Your chance to{" "}<br className="md:hidden"/>
                 <span>
                   <strike>layoff</strike>{" "}
                 </span>
                 <span className="text-brand">slayoff</span>
-              </h1>
+              </p>
             </Slide>
 
-            <h3 className="text-xl font-light text-gray-400">
+            <p className="px-8 text-sm font-light text-center text-gray-400 md:text-xl">
               Search through 1000s of Tech Jobs and reroot your profession.
-            </h3>
+            </p>
           </Fade>
         </div>
-        <Zoom className="w-1/2">
+        <Zoom className="w-full px-5 md:w-1/2">
         <div class="relative w-full">
           <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
             <svg
@@ -101,7 +105,7 @@ export default function Home() {
           <input
             type="search"
             id="default-search"
-            class="block p-4 pl-10 w-full text-2xl text-white bg-transparent rounded-lg border border-gray-600 focus:ring-brand focus:border-brand "
+            class="block p-4 pl-10 w-full text-base md:text-2xl text-white bg-transparent rounded-lg border border-gray-600 focus:ring-brand focus:border-brand "
             placeholder="Eg: Software Engineer jobs in Bengaluru"
             required
             onKeyDown={(e) => {
@@ -115,16 +119,17 @@ export default function Home() {
           />
           <button
             type="button"
+
             onClick={handleSearch}
-            class="text-darktext absolute right-2.5 inset-y-0 my-3 bg-brand hover:bg-blue-800  font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            class="text-darktext absolute md:block hidden right-2.5 inset-y-0 my-3 bg-brand hover:bg-blue-800  font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Search
           </button>
           
         </div>
         </Zoom>
-        <div className="flex flex-col items-center justify-center w-2/3 py-1">
-          <h1 className="text-2xl pb-4 text-secondarybrand w-[75%]">
+        <div className="flex flex-col items-center justify-center w-full py-1 md:w-2/3">
+          <h1 className="text-xl md:text-2xl pb-4 text-secondarybrand w-[75%]">
             {initialText}
           </h1>
           <InfiniteScroll
