@@ -16,6 +16,7 @@
     "eslint-config-next": "13.0.3",
     "flowbite": "^1.5.4",
     "flowbite-react": "^0.3.4",
+    "license-generator": "^0.0.13",
     "mongodb": "^4.12.0",
     "next": "13.0.3",
     "react": "18.2.0",
