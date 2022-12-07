@@ -40,6 +40,7 @@ export default function Home() {
       .get(`/api/search/jobs?q=${searchQuery}&page=${page}`)
       .catch((err) => {
         console.error(err);
+        setJobs([]);
       });
     if (response.data) {
       console.log(response.data.jobs);
