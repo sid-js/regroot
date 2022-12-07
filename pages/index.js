@@ -9,9 +9,11 @@ import { TbCalendarTime, TbMapPin } from "react-icons/tb";
 import InfiniteScroll from "react-infinite-scroller";
 import JobCard from "../components/JobCard";
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
+import { useRef } from "react";
 
 export default function Home() {
   const initial = [];
+  const searchResults = useRef(null);
   let [isOpen, setIsOpen] = useState(false);
   const [jobs, setJobs] = useState(initial);
   const [searchQuery, setSearchQuery] = useState("Amazon Google");
@@ -111,6 +113,11 @@ export default function Home() {
             onKeyDown={(e) => {
               if (e.key == "Enter") {
                 newSearch();
+                e.target.blur();
+                window.scrollTo({
+                  top: searchResults.current.offsetTop + 200,
+                  behavior: 'smooth',
+                });
               }
             }}
             onChange={(e) => {
@@ -133,6 +140,7 @@ export default function Home() {
             {initialText}
           </h1>
           <InfiniteScroll
+            ref={searchResults}
             pageStart={0}
             loadMore={getJobs}
             hasMore={!ending}
