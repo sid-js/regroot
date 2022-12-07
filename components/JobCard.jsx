@@ -27,7 +27,7 @@ const JobCard = ({ job }) => {
           ):<img className="w-14" src="/icon.svg"/>}
           
           <div className="flex flex-col items-start">
-            <a href={job.job_apply_link} target="_blank">
+            <a href={job.job_apply_link} target="_blank"  rel="noreferrer">
               <h3 className="text-2xl font-semibold hover:text-secondarybrand">
                 {job.job_title}
               </h3>
