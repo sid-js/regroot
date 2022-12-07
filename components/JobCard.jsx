@@ -16,7 +16,7 @@ const JobCard = ({ job }) => {
           <div className="flex items-center justify-center w-16 h-16 bg-white">
             <img
             className="object-cover w-16 p-1 overflow-hidden "
-            src={job.employer_logo}
+            src={job.employer_logo?job.employer_logo:"/icon.svg"}
             onError={({ currentTarget }) => {
               currentTarget.onerror = null; // prevents looping
               currentTarget.src = "/icon.svg";
