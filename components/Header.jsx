@@ -7,7 +7,7 @@ import Button from './Button'
 
 const Header = () => {
   return (
-   <nav className='sticky top-0 flex flex-row items-center justify-between w-full h-24 px-5 py-2 bg-brandbg'>
+   <nav className='sticky top-0 z-50 flex flex-row items-center justify-between w-full h-24 px-5 py-2 bg-brandbg'>
     <div className='w-48'>
         <Image width={200} src={regrootLogo}/>
     </div>
